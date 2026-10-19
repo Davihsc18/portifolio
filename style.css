@@ -94,7 +94,8 @@ header ul li a{
 }
 
 .hero-section h2 span,
-.sobre-section h2 span{
+.sobre-section h2 span,
+.contato-section h2 span{
     background-image: var(--cor-gradient);
     background-clip: text;
     -webkit-background-clip: text;
@@ -148,12 +149,15 @@ header ul li a{
     background-color: var(--bg-secundario);
 }
 
-.sobre-section, .projetos-section{
+.sobre-section, 
+.projetos-section{
     padding: 6rem 1rem;
     text-align: center;
 }
 
-.sobre-section h2, .projetos-section h2{
+.sobre-section h2, 
+.projetos-section h2, 
+.contato-section h2{
     font-size: clamp(2.5rem, 5vw, 3rem);
     margin-bottom: 1rem;
 }
@@ -161,6 +165,11 @@ header ul li a{
 
 /* temporario */
 .projetos-section p{
+    color: var(--cor-texto-primario);
+}
+
+/* temporario */
+.contato-section p{
     color: var(--cor-texto-primario);
 }
 
@@ -232,4 +241,72 @@ header ul li a{
     justify-content: center;
 
     border-radius: 1.5rem;
+}
+
+.contato-section form{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    background-color: var(--bg-secundario);
+    padding: .875rem 1rem;
+    /* padding: top/button left/right;  */
+
+    border-radius: 1.5rem;
+}
+
+form input, 
+form textarea{
+    margin-bottom: 1rem;
+    margin-top: .25rem;
+    
+    background-color: var(--bg-primario);
+}
+
+form label{
+    font-size: 1rem;
+    color: var(--cor-texto-secundario);
+}
+
+form input, 
+form textarea, 
+form button{
+    border-radius: 1.25rem;
+    border: none;
+    padding: .625rem 1rem;
+    font-size: 1rem;
+}
+
+form input, form button{
+    height: 3rem;
+}
+
+form button{
+    color: var(--cor-texto-button-primario);
+    background-color: var(--bg-button-primario);
+}
+
+footer{
+    padding: 1rem;
+    background-color: var(--bg-secundario);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 1.25rem;
+}
+
+footer ul{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+footer a{
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    gap: .25rem;
+
+    color: black;
 }
