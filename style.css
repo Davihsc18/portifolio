@@ -91,6 +91,7 @@ header ul li a{
     /* clamp(valor-minimo, valor-preferido, valor-máximo); */
     color: var(--cor-texto-secundario);
     margin-bottom: 1rem;
+    max-width: 20ch;
 }
 
 .hero-section h2 span,
@@ -106,6 +107,7 @@ header ul li a{
     color: var(--cor-texto-primario);
     line-height: 1.5;
     font-size: clamp(1.125rem, 3vw, 1.5rem);
+    max-width: 38ch;
 }
 
 .hero-section ul{
@@ -143,14 +145,12 @@ header ul li a{
 }
 
 .sobre-section{
-    padding: 6rem 1rem;
-    text-align: center;
-
     background-color: var(--bg-secundario);
 }
 
 .sobre-section, 
-.projetos-section{
+.projetos-section,
+.contato-section{
     padding: 6rem 1rem;
     text-align: center;
 }
@@ -191,6 +191,12 @@ header ul li a{
     border-radius: 1.5rem;
 }
 
+.projetos-section p{
+    max-width: 50ch;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .projetos-section li{
     margin-bottom: 1rem;
     border-radius: 2rem;
@@ -201,13 +207,13 @@ header ul li a{
 }
 
 .projetos-section li:first-child{
-    background-image: url(img/Pc\ img\ 1.jpg);
+    background-image: url(img/Pc\ 1.jpg);
 }
 .projetos-section li:nth-child(2){
-    background-image: url(img/Pc\ img\ 2.jpg);
+    background-image: url(img/Pc\ 2.jpg);
 }
 .projetos-section li:nth-child(3){
-    background-image: url(img/Pc\ img\ 3.jpg);
+    background-image: url(img/Pc\ 3.jpg);
 }
 
 .projetos-section article{
@@ -243,6 +249,11 @@ header ul li a{
     border-radius: 1.5rem;
 }
 
+.contato-section div p{
+    max-width: 45ch;
+    margin: 1rem auto;
+}
+
 .contato-section form{
     display: flex;
     flex-direction: column;
@@ -250,8 +261,11 @@ header ul li a{
     background-color: var(--bg-secundario);
     padding: .875rem 1rem;
     /* padding: top/button left/right;  */
-
     border-radius: 1.5rem;
+    width: 100%;
+    max-width: 30rem;
+    margin: auto;
+    /* margin: top right bottom left; */
 }
 
 form input, 
@@ -276,13 +290,15 @@ form button{
     font-size: 1rem;
 }
 
-form input, form button{
+form input, 
+form button{
     height: 3rem;
 }
 
 form button{
     color: var(--cor-texto-button-primario);
     background-color: var(--bg-button-primario);
+    cursor: pointer;
 }
 
 footer{
@@ -309,4 +325,53 @@ footer a{
     gap: .25rem;
 
     color: black;
+}
+
+@media screen and (min-width:48rem){
+    body{
+        background-color: #1f3141;
+    }
+    
+   .hero-section ul{
+        flex-direction: row;
+   }
+
+   .hero-section ul li{
+        width: 100%;
+   }
+
+   .sobre-section{
+    display: flex;
+    gap: 2rem;
+   }
+
+   .sobre-section{
+    text-align: left;
+   }
+   .projetos-section ul{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 2rem;
+   }
+}
+
+@media screen and (min-width: 75rem) {
+    .projetos-section ul{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .contato-section{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    .contato-section div{
+        text-align: left;
+    }
+
+    .contato-section div p{
+        margin: 1rem 0;
+    }
 }
