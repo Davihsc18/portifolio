@@ -22,7 +22,7 @@
     --cor-texto-primario: #868686;
     --cor-texto-secundario:  #1c1c1c;
 
-    --cor-gradient: linear-gradient(135deg,#005299,#005299);
+    --cor-gradient: linear-gradient(135deg,#018dfff7,#3cff00cf);
 }
 
 /* Limpando estilos padrões do navegador */
@@ -92,32 +92,44 @@ header ul li a{
     color: var(--cor-texto-secundario);
     margin-bottom: 1rem;
     max-width: 20ch;
+    
+    animation: texto-subindo 1s ease-out both;
 }
 
-.hero-section h2 span,
-.sobre-section h2 span,
-.contato-section h2 span{
+h2 span{ 
     background-image: var(--cor-gradient);
+    background-size: 300% 300%;
+    background-position: 0% 50%;
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
+    
+    animation-name: gradiente-animacao;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
 }
-
+    
 .hero-section p{
     color: var(--cor-texto-primario);
     line-height: 1.5;
     font-size: clamp(1.125rem, 3vw, 1.5rem);
     max-width: 38ch;
+    
+    animation: texto-subindo 1s ease-out both;
+    animation-delay: 200ms;
 }
 
 .hero-section ul{
     margin-top: 1rem;
     width: 100%;
     max-width: 37.5rem;
-
+      
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    
+    animation: texto-subindo 1s ease-out both;
+    animation-delay: 400ms;
 }
 
 .hero-section a{
@@ -373,5 +385,31 @@ footer a{
 
     .contato-section div p{
         margin: 1rem 0;
+    }
+}
+
+@keyframes gradiente-animacao{
+   0%{
+        background-position: 0% 50%;
+    }
+
+    50%{
+        background-position: 100% 50%;
+    } 
+
+    100%{
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes texto-subindo{
+    from{
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
     }
 }
